@@ -2,8 +2,9 @@
   "name": "sweetgum.client",
   "version": "0.0.1",
   "description": "Sweetgum assists in the development and testing of APIs and applications that utilize APIs.",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
+    "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
