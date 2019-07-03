@@ -1,5 +1,3 @@
 import * as React from 'react';
 
-const RequestUrlTextbox = () => <input className="request-url" type="text" />;
-
-export default RequestUrlTextbox;
+export default () => <input className="request-url" type="text" />;
