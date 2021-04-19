@@ -16,6 +16,7 @@
                 "SwitchCase": 1
             }
         ],
+        "whitespace": [true, "check-module"],
         "variable-name": false,
         "jsx-alignment": true,
         "jsx-equals-spacing": [true, "never"],

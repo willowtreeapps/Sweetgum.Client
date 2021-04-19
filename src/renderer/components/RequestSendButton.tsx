@@ -1,5 +1,15 @@
 import * as React from 'react';
 
-const RequestSendButton = () => <button className="request-send">Send</button>;
+type Props = {
+    onClick: React.MouseEventHandler;
+};
 
-export default RequestSendButton;
+export default class RequestSendButton extends React.Component<Props> {
+    render() {
+        return (
+            <button className="request-send" onClick={this.props.onClick}>
+                Send
+            </button>
+        );
+    }
+}

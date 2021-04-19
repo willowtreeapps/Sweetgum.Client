@@ -13,9 +13,6 @@ type State = {
     currentTab: Tab;
 };
 
-// Clock has no properties, but the current state is of type ClockState
-// The generic parameters in the Component typing allow to pass props
-// and state. Since we don't have props, we pass an empty object.
 export class RequestOptions extends React.Component<Props, State> {
     constructor(p: Props) {
         super(p);
@@ -24,26 +21,34 @@ export class RequestOptions extends React.Component<Props, State> {
         };
     }
 
-    navigateToHeaders = () => {
+    navigateToHeaders() {
         this.setState({
             currentTab: Tab.Headers
         });
-    };
+    }
 
-    navigateToBody = () => {
+    navigateToBody() {
         this.setState({
             currentTab: Tab.Body
         });
-    };
+    }
 
     render() {
+        const onClickHandlerHeaders = () => {
+            this.navigateToHeaders();
+        };
+
+        const onClickHandlerBody = () => {
+            this.navigateToBody();
+        };
+
         return (
             <div className="request-options">
                 <div className="request-options-tabs">
-                    <a href="#" onClick={this.navigateToHeaders}>
+                    <a href="#" onClick={onClickHandlerHeaders}>
                         Headers
                     </a>
-                    <a href="#" onClick={this.navigateToBody}>
+                    <a href="#" onClick={onClickHandlerBody}>
                         Body
                     </a>
                 </div>
@@ -59,5 +64,3 @@ export class RequestOptions extends React.Component<Props, State> {
         );
     }
 }
-
-export default RequestOptions;

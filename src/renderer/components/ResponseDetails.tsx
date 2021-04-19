@@ -21,26 +21,34 @@ export class ResponseDetails extends React.Component<Props, State> {
         };
     }
 
-    navigateToHeaders = () => {
+    navigateToHeaders() {
         this.setState({
             currentTab: Tab.Headers
         });
-    };
+    }
 
-    navigateToBody = () => {
+    navigateToBody() {
         this.setState({
             currentTab: Tab.Body
         });
-    };
+    }
 
     render() {
+        const onClickHandlerHeaders = () => {
+            this.navigateToHeaders();
+        };
+
+        const onClickHandlerBody = () => {
+            this.navigateToBody();
+        };
+
         return (
             <div className="response-details">
                 <div className="response-details-tabs">
-                    <a href="#" onClick={this.navigateToHeaders}>
+                    <a href="#" onClick={onClickHandlerHeaders}>
                         Headers
                     </a>
-                    <a href="#" onClick={this.navigateToBody}>
+                    <a href="#" onClick={onClickHandlerBody}>
                         Body
                     </a>
                 </div>
@@ -56,5 +64,3 @@ export class ResponseDetails extends React.Component<Props, State> {
         );
     }
 }
-
-export default ResponseDetails;
